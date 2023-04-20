@@ -2,13 +2,7 @@ package cat.pulidolloveras.objects;
 
 import java.util.ArrayList;
 
-public abstract class Cartes {
-
-    public ArrayList<Object> getCartes() {
-        return cartes;
-    }
-
-    private final ArrayList<Object> cartes = new ArrayList<>();
+public class Cartes {
 
     private String nom;
 
@@ -49,6 +43,8 @@ public abstract class Cartes {
     public void setEscudo(int escudo) {
         this.escudo = escudo;
     }
+
+    public static ArrayList<Cartes> arrayCartes = new ArrayList<>();
 
     public Cartes(String nom, int vida, int atac, int escudo) {
         this.nom = nom;
