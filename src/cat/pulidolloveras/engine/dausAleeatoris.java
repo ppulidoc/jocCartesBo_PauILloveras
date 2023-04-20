@@ -15,4 +15,6 @@ public class dausAleeatoris {
         resultat = rand.nextInt(11) + 1;
         return resultat;
     }
+
+
 }

@@ -1,4 +1,4 @@
-package cat.pulidolloveras.file;
+package cat.pulidolloveras.ui;
 
 public class pintarMapa {
     public static void pintarMapaCapcelera(){
