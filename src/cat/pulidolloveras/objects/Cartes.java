@@ -56,36 +56,23 @@ public class Cartes {
     public static void assignarCartes(int numCartaUsuari, int numCartaCpu, int[] array){
         int vida_usuari = Cartes.arrayCartes.get(numCartaUsuari - 1).getVida() * Cartes.arrayCartes.get(numCartaUsuari - 1).getEscudo();
         int atac_usuari = Cartes.arrayCartes.get(numCartaUsuari - 1).getAtac();
+        int escut_usuari = Cartes.arrayCartes.get(numCartaUsuari - 1).getEscudo();
 
         int vida_cpu = Cartes.arrayCartes.get(numCartaCpu - 1).getVida() * Cartes.arrayCartes.get(numCartaCpu - 1).getEscudo();
         int atac_cpu= Cartes.arrayCartes.get(numCartaCpu - 1).getAtac();
+        int escut_cpu = Cartes.arrayCartes.get(numCartaCpu - 1).getEscudo();
 
         System.out.println("La carta del usuari és: " + numCartaUsuari);
         System.out.println("La carta de la cpu és: " + numCartaCpu);
 
         array[0] = vida_usuari;
         array[1] = atac_usuari;
-        array[2] = vida_cpu;
-        array[3] = atac_cpu;
+        array[2] = escut_usuari;
+        array[3] = vida_cpu;
+        array[4] = atac_cpu;
+        array[5] = escut_cpu;
 
-        int contador = 0;
-        for (int i = 0; i < array.length; i++){
-            if (contador == 0) {
-                System.out.println("USUARI: ");
-                System.out.println("La vida de l'usuari és: " + array[i]);
-                contador++;
-            } else if (contador == 1){
-                System.out.println("L'atac de l'usuari és : " + array[i]);
-                System.out.println();
-                System.out.println("CPU: ");
-                contador++;
-            } else if (contador == 2){
-                System.out.println("La vida de la CPU és: " + array[i]);
-                contador++;
-            } else {
-                System.out.println("L'atac de la CPU és: " + array[i]);
-            }
         }
     }
-}
+
 

@@ -35,7 +35,7 @@ public class main {
         int multiDaus;
 
  //-------------------------------------------------------------------------------------------------------
-        leerFicher.muestraTitulo("C:\\Users\\arnau\\IdeaProjects\\jocCartesBo_PauILloveras\\src\\cat\\pulidolloveras\\file\\titol");
+        leerFicher.muestraTitulo("C:\\Users\\arnau_sq0x0sm\\Desktop\\DAM\\M03 - Programació\\UF4\\jocCartesBo_PauILloveras\\src\\cat\\pulidolloveras\\file\\titol");
         do {
             System.out.println("\nSeleccione su opcion --> \n[1]. Leer Instrucciones" +
                     "\n[2]. Empezar a jugar" +
@@ -44,7 +44,7 @@ public class main {
             seleIni =t.next().charAt(0);
         } while (seleIni != '1' && seleIni != '2' & seleIni != '3');
         if (seleIni == '1'){
-            leerFicher.muestraInstrucciones("C:\\Users\\arnau\\IdeaProjects\\jocCartesBo_PauILloveras\\src\\cat\\pulidolloveras\\file\\Instrucciones");
+            leerFicher.muestraInstrucciones("C:\\Users\\arnau_sq0x0sm\\Desktop\\DAM\\M03 - Programació\\UF4\\jocCartesBo_PauILloveras\\src\\cat\\pulidolloveras\\file\\Instrucciones");
         } else if (seleIni == '2'){
             System.out.print("Tria una carta del 1 al 10: ");
             int carta_usuari = t.nextInt();
@@ -56,15 +56,17 @@ public class main {
             while (carta_cpu == carta_usuari || carta_cpu < 1 || carta_cpu > 9){
                 carta_cpu = (int)(Math.random()*9+1);
             }
-            int[] assignacio = new int[4];
+            int[] assignacio = new int[6];
             Cartes.assignarCartes(carta_usuari, carta_cpu, assignacio);
             int vida_usuari = assignacio[0];
             int atac_usuari = assignacio[1];
+            int escut_usuari = assignacio[2];
 
-            int vida_cpu = assignacio[2];
-            int atac_cpu = assignacio[3];
+            int vida_cpu = assignacio[3];
+            int atac_cpu = assignacio[4];
+            int escut_cpu = assignacio[5];
 
-            game.jugar(vida_usuari, atac_usuari, vida_cpu, atac_cpu);
+            game.jugar(vida_usuari, atac_usuari, escut_usuari, vida_cpu, atac_cpu, escut_cpu);
         }
 
 

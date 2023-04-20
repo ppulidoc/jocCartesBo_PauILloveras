@@ -1,61 +1,117 @@
 package cat.pulidolloveras.engine;
 
+import cat.pulidolloveras.objects.Cartes;
 import cat.pulidolloveras.ui.UI;
+import cat.pulidolloveras.ui.pintarMapa;
 
 import java.util.Scanner;
 
 public class game {
-    public static void jugar(int vida_usuari, int atac_usuari, int vida_cpu, int atac_cpu){
+    public static void jugar(int vida_usuari, int atac_usuari, int escut_usuari, int vida_cpu, int atac_cpu, int escut_cpu){
+        pintarMapa.pintarMapaCapcelera(vida_usuari, atac_usuari, escut_usuari);
+        pintarMapa.pintarMapaIntemig();
+        pintarMapa.pintarMapaFooter(vida_cpu, atac_cpu, escut_cpu);
         while (vida_usuari > 0 && vida_cpu > 0){
             Scanner teclat = new Scanner(System.in);
+            System.out.println();
             System.out.print("Que vols fer: [1].Atacar [2].Fugir: ");
             int eleccio = teclat.nextInt();
-            while (eleccio < 1 || eleccio > 2){
+            while (eleccio != 1 && eleccio != 2){
                 System.out.println("Ha de ser [1].Atacar o [2].Fugir:");
                 eleccio = teclat.nextInt();
             }
             if (eleccio == 1){
                 int randomSort = (int)(Math.random()*10+1);
                 if (randomSort == 3){
+                    pintarMapa.pintarMapaCapcelera(vida_usuari, atac_usuari, escut_usuari);
+                    pintarMapa.pintarMapaIntemig();
+                    pintarMapa.pintarMapaFooter(vida_cpu, atac_cpu, escut_cpu);
+                    System.out.println();
                     System.out.println("Mala sort, has fallat.");
-                } else if (randomSort == 1){
+                } else if (randomSort == 1) {
+                    vida_cpu -= (atac_usuari * 2);
+                    if (vida_cpu <= 0) {
+                        vida_cpu = 0;
+                        pintarMapa.pintarMapaCapcelera(vida_usuari, atac_usuari, escut_usuari);
+                        pintarMapa.pintarMapaIntemig();
+                        pintarMapa.pintarMapaFooter(vida_cpu, atac_cpu, escut_cpu);
+                        System.out.println();
+                        System.out.println("Has guanyat.");
+                        break;
+                    } else {
+                        pintarMapa.pintarMapaCapcelera(vida_usuari, atac_usuari, escut_usuari);
+                    pintarMapa.pintarMapaIntemig();
+                    pintarMapa.pintarMapaFooter(vida_cpu, atac_cpu, escut_cpu);
+                    }
+                    System.out.println();
                     System.out.println("Ha sigut un cop crític.");
-                    vida_cpu -= (atac_usuari*2);
-                    if (vida_cpu < 0){
-                        System.out.println("Has guanyat.");
-                        break;
-                    }
-                    else System.out.println("La vida del oponent és: " + vida_cpu);
                 } else {
-                    System.out.println("Has golpejat.");
                     vida_cpu -= atac_usuari;
-                    if (vida_cpu < 0) {
+                    if (vida_cpu <= 0) {
+                        vida_cpu = 0;
+                        pintarMapa.pintarMapaCapcelera(vida_usuari, atac_usuari, escut_usuari);
+                        pintarMapa.pintarMapaIntemig();
+                        pintarMapa.pintarMapaFooter(vida_cpu, atac_cpu, escut_cpu);
+                        System.out.println();
                         System.out.println("Has guanyat.");
                         break;
                     }
-                    else System.out.println("La vida del oponent és: " + vida_cpu);
+                    else {
+                        pintarMapa.pintarMapaCapcelera(vida_usuari, atac_usuari, escut_usuari);
+                        pintarMapa.pintarMapaIntemig();
+                        pintarMapa.pintarMapaFooter(vida_cpu, atac_cpu, escut_cpu);
+                    }
+                    System.out.println();
+                    System.out.println("Has golpejat.");
                 }
 
+                System.out.println("Tecleji algo per a continuar: ");
+                String continuar = teclat.next();
+
                 if (randomSort == 10){
+                    pintarMapa.pintarMapaCapcelera(vida_usuari, atac_usuari, escut_usuari);
+                    pintarMapa.pintarMapaIntemig();
+                    pintarMapa.pintarMapaFooter(vida_cpu, atac_cpu, escut_cpu);
+                    System.out.println();
                     System.out.println("Has tingut sort, l'enemic ha fallat.");
                 } else if (randomSort == 5){
-                    System.out.println("L'enemic t'ha fet un cop crític.");
                     vida_usuari -= (atac_cpu * 2);
-                    if (vida_usuari < 0) {
+                    if (vida_usuari <= 0) {
+                        vida_usuari = 0;
+                        pintarMapa.pintarMapaCapcelera(vida_usuari, atac_usuari, escut_usuari);
+                        pintarMapa.pintarMapaIntemig();
+                        pintarMapa.pintarMapaFooter(vida_cpu, atac_cpu, escut_cpu);
+                        System.out.println();
                         System.out.println("Has perdut.");
                         break;
                     }
-                    else System.out.println("La teva vida és: " + vida_usuari);
+                    else {
+                        pintarMapa.pintarMapaCapcelera(vida_usuari, atac_usuari, escut_usuari);
+                        pintarMapa.pintarMapaIntemig();
+                        pintarMapa.pintarMapaFooter(vida_cpu, atac_cpu, escut_cpu);
+                    }
+                    System.out.println();
+                    System.out.println("L'enemic t'ha fet un cop crític.");
                 } else {
-                    System.out.println("T'han golpejat.");
                     vida_usuari -= atac_cpu;
-                    if (vida_usuari < 0) {
+                    if (vida_usuari <= 0) {
+                        vida_usuari = 0;
+                        pintarMapa.pintarMapaCapcelera(vida_usuari, atac_usuari, escut_usuari);
+                        pintarMapa.pintarMapaIntemig();
+                        pintarMapa.pintarMapaFooter(vida_cpu, atac_cpu, escut_cpu);
+                        System.out.println();
                         System.out.println("Has perdut.");
                         break;
                     }
-                    else System.out.println("La teva vida és: " + vida_usuari);
+                    else {
+                        pintarMapa.pintarMapaCapcelera(vida_usuari, atac_usuari, escut_usuari);
+                        pintarMapa.pintarMapaIntemig();
+                        pintarMapa.pintarMapaFooter(vida_cpu, atac_cpu, escut_cpu);
+                    }
+                    System.out.println();
+                    System.out.println("T'han golpejat.");
                 }
-            } else if (eleccio == 2){
+            } else {
                 System.out.println("Has fugit, la CPU ha guanyat.");
                 break;
             }
