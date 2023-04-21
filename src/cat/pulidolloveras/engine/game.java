@@ -30,7 +30,7 @@ public class game {
                         vida_cpu = 0;
                         pintarMapa.pintarMapaSencer(nom, vida_usuari, atac_usuari, escut_usuari, vida_cpu, atac_cpu, escut_cpu);
                         System.out.println();
-                        System.out.println("Has guanyat.");
+                        System.out.printf("\nHas guanyat.", nom);
                         break;
                     } else {
                         pintarMapa.pintarMapaSencer(nom, vida_usuari, atac_usuari, escut_usuari, vida_cpu, atac_cpu, escut_cpu);
@@ -43,14 +43,14 @@ public class game {
                         vida_cpu = 0;
                         pintarMapa.pintarMapaSencer(nom, vida_usuari, atac_usuari, escut_usuari, vida_cpu, atac_cpu, escut_cpu);
                         System.out.println();
-                        System.out.println("Has guanyat.");
+                        System.out.printf("\nHas guanyat.", nom);
                         break;
                     }
                     else {
                         pintarMapa.pintarMapaSencer(nom, vida_usuari, atac_usuari, escut_usuari, vida_cpu, atac_cpu, escut_cpu);
                     }
                     System.out.println();
-                    System.out.println("Has golpejat.");
+                    System.out.printf("Has golpejat.");
                 }
 
                 System.out.println("Tecleji algo per a continuar: ");
@@ -66,7 +66,7 @@ public class game {
                         vida_usuari = 0;
                         pintarMapa.pintarMapaSencer(nom, vida_usuari, atac_usuari, escut_usuari, vida_cpu, atac_cpu, escut_cpu);
                         System.out.println();
-                        System.out.println("Has perdut.");
+                        System.out.printf("\nHas perdut %s", nom);
                         break;
                     }
                     else {
@@ -80,7 +80,7 @@ public class game {
                         vida_usuari = 0;
                         pintarMapa.pintarMapaSencer(nom, vida_usuari, atac_usuari, escut_usuari, vida_cpu, atac_cpu, escut_cpu);
                         System.out.println();
-                        System.out.println("Has perdut.");
+                        System.out.printf("\nHas perdut.", nom);
                         break;
                     }
                     else {

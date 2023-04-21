@@ -55,8 +55,11 @@ public class Cartes {
 
     /**
      * @param numCartaUsuari
+     * La carta de l'usuari és la carta que introdueix el jugador per teclat, per assignar-li la vida, atac i escut.
      * @param numCartaCpu
+     * La carta de la cpu ve de un número generat automàticament, també per assignar-li vida, atac i escut.
      * @param array
+     * S'assigna la vida, atac i escut a cada posició d'array per així mostrar-ho correctament i de manera fàcil al main.
      */
     public static void assignarCartes(int numCartaUsuari, int numCartaCpu, int[] array){
         int vida_usuari = Cartes.arrayCartes.get(numCartaUsuari - 1).getVida() * Cartes.arrayCartes.get(numCartaUsuari - 1).getEscudo();
