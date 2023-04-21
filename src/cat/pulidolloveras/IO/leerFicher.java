@@ -5,6 +5,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class leerFicher {
+
+    /**
+     * @param archivo
+     * @throws FileNotFoundException
+     * @throws IOException
+     * Aquest mètode el que fa és mostrar per el terminal un títol el qual està esctit a un fotxer txt extern.
+     */
     public static void muestraTitulo(String archivo) throws FileNotFoundException, IOException {
         String cadena;
         FileReader f = new FileReader(archivo);
@@ -14,6 +21,13 @@ public class leerFicher {
         }
         b.close();
     }
+
+    /**
+     * @param archivo
+     * @throws FileNotFoundException
+     * @throws IOException
+     * Aquest mètode el que fa és mostrar per el terminal les Instruccions que es troven escritesa a un fotxer txt extern.
+     */
     public static void muestraInstrucciones (String archivo) throws FileNotFoundException, IOException {
         String cadena;
         FileReader f = new FileReader(archivo);
