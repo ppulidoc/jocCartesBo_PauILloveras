@@ -39,8 +39,8 @@ public class leerFicher {
     }
 
     public static void main(String[] args) throws IOException {
-        muestraTitulo("/file/titol");
-        muestraInstrucciones("/file/Instruccciones");
+        muestraTitulo("C:\\Users\\arnau\\IdeaProjects\\jocCartesBo_PauILloveras\\src\\cat\\pulidolloveras\\file\\titol");
+        muestraInstrucciones("C:\\Users\\arnau\\IdeaProjects\\jocCartesBo_PauILloveras\\src\\cat\\pulidolloveras\\file\\Instrucciones");
 
     }
 }

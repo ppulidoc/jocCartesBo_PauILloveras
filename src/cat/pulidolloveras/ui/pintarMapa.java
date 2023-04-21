@@ -1,19 +1,19 @@
 package cat.pulidolloveras.ui;
 
 public class pintarMapa {
-    public static void pintarMapaCapcelera(){
+    public static void pintarMapaCapcelera(int vida, int atac, int escut){
         System.out.printf("*--------------------------------------------------------------------------*\n" +
                 "-                               PS            ATK           SHIELD         -\n" +
                 "-                          ************   ************   ************      -\n" +
                 "-                          *          *   *          *   *          *      -\n" +
                 "- --> PS : %d             *          *   *          *   *          *      -\n" +
-                "- --> ATK: %d             *          *   *          *   *          *      -\n" +
-                "- --> SHIELD: %d          *          *   *          *   *          *      -\n" +
+                "- --> ATK: %d              *   %d    *   *    %d    *   *     %d    *      -\n" +
+                "- --> SHIELD: %d            *          *   *          *   *          *      -\n" +
                 "-                          ************   ************   ************      -\n" +
-                "-                                                                          -\n",234,543,454);//psCartesJ1,atkCartesJ1,shieldCartesJ1 );
+                "-                                                                          -\n",vida,atac,vida, atac, escut, escut);//psCartesJ1,atkCartesJ1,shieldCartesJ1 );
     }
-    public static void pintarMapaIntemig(){
-        System.out.println("--------------------------------   PLAYER 2   ------------------------------\n" +
+    public static void pintarMapaIntemig(String nom){
+        System.out.printf("--------------------------------   CPU   ------------------------------\n" +
                 "-                                                                          -\n" +
                 "-                            -       -    - - - - -                        -\n" +
                 "-                            -     -     -                                 -\n" +
@@ -22,19 +22,26 @@ public class pintarMapa {
                 "-                            -        - - - - -                            -\n" +
                 "-                                                                          -\n" +
                 "-                                                                          -\n" +
-                "--------------------------------   PLAYER 1   ------------------------------");
+                "--------------------------------   %s   ------------------------------", nom);
     }
-    public static void pintarMapaFooter(){
+    public static void pintarMapaFooter(int vida, int atac, int escut){
+        System.out.println();
         System.out.printf("-                               PS            ATK           SHIELD         -\n" +
                 "-                          ************   ************   ************      -\n" +
                 "-                          *          *   *          *   *          *      -\n" +
                 "- --> PS : %d             *          *   *          *   *          *      -\n" +
-                "- --> ATK: %d             *          *   *          *   *          *      -\n" +
-                "- --> SHIELD: %d          *          *   *          *   *          *      -\n" +
+                "- --> ATK: %d              *   %d    *   *    %d    *   *     %d    *      -\n" +
+                "- --> SHIELD: %d            *          *   *          *   *          *      -\n" +
                 "-                          ************   ************   ************      -\n" +
                 "-                                                                          -\n" +
                 "-                                               @byPulido&Lloveras Company -\n" +
-                "*--------------------------------------------------------------------------*",534,367,412); //psCartesJ2,atkCartesJ2,shieldCartesJ2);
+                "*--------------------------------------------------------------------------*",vida,atac,vida, atac, escut, escut); //psCartesJ2,atkCartesJ2,shieldCartesJ2);
+    }
+
+    public static void pintarMapaSencer(String nom, int vida, int atac, int escut, int vida_cpu, int atac_cpu, int escut_cpu){
+        pintarMapaCapcelera(vida_cpu, atac_cpu, escut_cpu);
+        pintarMapaIntemig(nom);
+        pintarMapaFooter(vida, atac, escut);
     }
 
 }

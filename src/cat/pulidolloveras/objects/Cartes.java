@@ -2,13 +2,7 @@ package cat.pulidolloveras.objects;
 
 import java.util.ArrayList;
 
-public abstract class Cartes {
-
-    public ArrayList<Object> getCartes() {
-        return cartes;
-    }
-
-    private final ArrayList<Object> cartes = new ArrayList<>();
+public class Cartes {
 
     private String nom;
 
@@ -50,11 +44,35 @@ public abstract class Cartes {
         this.escudo = escudo;
     }
 
+    public static ArrayList<Cartes> arrayCartes = new ArrayList<>();
+
     public Cartes(String nom, int vida, int atac, int escudo) {
         this.nom = nom;
         this.vida = vida;
         this.atac = atac;
         this.escudo = escudo;
     }
-}
+
+    public static void assignarCartes(int numCartaUsuari, int numCartaCpu, int[] array){
+        int vida_usuari = Cartes.arrayCartes.get(numCartaUsuari - 1).getVida() * Cartes.arrayCartes.get(numCartaUsuari - 1).getEscudo();
+        int atac_usuari = Cartes.arrayCartes.get(numCartaUsuari - 1).getAtac();
+        int escut_usuari = Cartes.arrayCartes.get(numCartaUsuari - 1).getEscudo();
+
+        int vida_cpu = Cartes.arrayCartes.get(numCartaCpu - 1).getVida() * Cartes.arrayCartes.get(numCartaCpu - 1).getEscudo();
+        int atac_cpu= Cartes.arrayCartes.get(numCartaCpu - 1).getAtac();
+        int escut_cpu = Cartes.arrayCartes.get(numCartaCpu - 1).getEscudo();
+
+        System.out.println("La carta del usuari és: " + numCartaUsuari);
+        System.out.println("La carta de la cpu és: " + numCartaCpu);
+
+        array[0] = vida_usuari;
+        array[1] = atac_usuari;
+        array[2] = escut_usuari;
+        array[3] = vida_cpu;
+        array[4] = atac_cpu;
+        array[5] = escut_cpu;
+
+        }
+    }
+
 
