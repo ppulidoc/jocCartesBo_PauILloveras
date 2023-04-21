@@ -12,8 +12,8 @@ public class pintarMapa {
                 "-                          ************   ************   ************      -\n" +
                 "-                                                                          -\n",vida,atac,vida, atac, escut, escut);//psCartesJ1,atkCartesJ1,shieldCartesJ1 );
     }
-    public static void pintarMapaIntemig(){
-        System.out.println("--------------------------------   PLAYER 2   ------------------------------\n" +
+    public static void pintarMapaIntemig(String nom){
+        System.out.printf("--------------------------------   CPU   ------------------------------\n" +
                 "-                                                                          -\n" +
                 "-                            -       -    - - - - -                        -\n" +
                 "-                            -     -     -                                 -\n" +
@@ -22,9 +22,10 @@ public class pintarMapa {
                 "-                            -        - - - - -                            -\n" +
                 "-                                                                          -\n" +
                 "-                                                                          -\n" +
-                "--------------------------------   PLAYER 1   ------------------------------");
+                "--------------------------------   %s   ------------------------------", nom);
     }
     public static void pintarMapaFooter(int vida, int atac, int escut){
+        System.out.println();
         System.out.printf("-                               PS            ATK           SHIELD         -\n" +
                 "-                          ************   ************   ************      -\n" +
                 "-                          *          *   *          *   *          *      -\n" +
@@ -35,6 +36,12 @@ public class pintarMapa {
                 "-                                                                          -\n" +
                 "-                                               @byPulido&Lloveras Company -\n" +
                 "*--------------------------------------------------------------------------*",vida,atac,vida, atac, escut, escut); //psCartesJ2,atkCartesJ2,shieldCartesJ2);
+    }
+
+    public static void pintarMapaSencer(String nom, int vida, int atac, int escut, int vida_cpu, int atac_cpu, int escut_cpu){
+        pintarMapaCapcelera(vida_cpu, atac_cpu, escut_cpu);
+        pintarMapaIntemig(nom);
+        pintarMapaFooter(vida, atac, escut);
     }
 
 }
