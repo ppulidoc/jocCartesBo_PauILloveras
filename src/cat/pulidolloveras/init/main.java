@@ -8,7 +8,9 @@ import java.io.IOException;
 import java.util.Scanner;
 public class main {
     public static Scanner t = new Scanner(System.in);
+//HEM DE FER LO DEL JAVADOC
     public static void main(String[] args) throws IOException {
+
 
         char seleIni = ' ';
         char qDaus = ' ' ;
@@ -68,11 +70,12 @@ public class main {
                     "\n[3]. Exit \n");
 
             seleIni =t.next().charAt(0);
+            if (seleIni == '1'){
+                leerFicher.muestraInstrucciones("C:\\Users\\arnau_sq0x0sm\\Desktop\\DAM\\M03 - Programació\\UF4\\jocCartesBo_PauILloveras\\src\\cat\\pulidolloveras\\file\\Instrucciones");
+                seleIni = '0';
+            }
         } while (seleIni != '1' && seleIni != '2' & seleIni != '3');
-        if (seleIni == '1'){
-            leerFicher.muestraInstrucciones("C:\\Users\\arnau_sq0x0sm\\Desktop\\DAM\\M03 - Programació\\UF4\\jocCartesBo_PauILloveras\\src\\cat\\pulidolloveras\\file\\Instrucciones");
-            seleIni++;
-        } else if (seleIni == '2'){
+         if (seleIni == '2'){
             System.out.println("Escrigui el seu nom: ");
             String nom = t.next();
             System.out.print("Tria una carta del 1 al 10: ");
@@ -99,6 +102,11 @@ public class main {
         }
 
 
+//-------------------------------------------------------------------------------------------------------
+        // pintarMapa.pintarMapaCapcelera();
+//        pintarMapa.pintarMapaIntemig();
+//        pintarMapa.pintarMapaFooter();
+//        System.out.println("-----------");
 
 
     }
