@@ -53,6 +53,11 @@ public class Cartes {
         this.escudo = escudo;
     }
 
+    /**
+     * @param numCartaUsuari
+     * @param numCartaCpu
+     * @param array
+     */
     public static void assignarCartes(int numCartaUsuari, int numCartaCpu, int[] array){
         int vida_usuari = Cartes.arrayCartes.get(numCartaUsuari - 1).getVida() * Cartes.arrayCartes.get(numCartaUsuari - 1).getEscudo();
         int atac_usuari = Cartes.arrayCartes.get(numCartaUsuari - 1).getAtac();
