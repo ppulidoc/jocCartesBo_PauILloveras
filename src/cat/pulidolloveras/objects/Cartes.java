@@ -79,7 +79,6 @@ public class Cartes {
         array[3] = vida_cpu;
         array[4] = atac_cpu;
         array[5] = escut_cpu;
-
         }
     }
 

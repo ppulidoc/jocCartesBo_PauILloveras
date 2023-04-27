@@ -11,7 +11,6 @@ public class main {
 //HEM DE FER LO DEL JAVADOC
     public static void main(String[] args) throws IOException {
 
-
         char seleIni = ' ';
         char qDaus = ' ' ;
         int multiDaus;
@@ -74,7 +73,7 @@ public class main {
                 leerFicher.muestraInstrucciones("C:\\Users\\arnau_sq0x0sm\\Desktop\\DAM\\M03 - Programació\\UF4\\jocCartesBo_PauILloveras\\src\\cat\\pulidolloveras\\file\\Instrucciones");
                 seleIni = '0';
             }
-        } while (seleIni != '1' && seleIni != '2' & seleIni != '3');
+        } while (seleIni != '2' && seleIni != '3');
          if (seleIni == '2'){
             System.out.println("Escrigui el seu nom: ");
             String nom = t.next();
